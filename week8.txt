@@ -1,0 +1,22 @@
+linked list คือ โครงสร้างของข้อมูลที่ถูกออกมาใช้เกก็บ้อมูล เชื่อมกันเป็นสาย คล้ายๆ Array
+structure กำหนดรูปแบบของข้อมูลที่สัมพันธ์กัน โครงสร้างคือ
+struct student std; //std เป็นตัวแปรของโครงสร้าง struct student
+การที่เราจะเข้าถึง แต่ละฟิลด์ของ structure ได้ จะใช้ . เช่น
+printf("%s\n", std.name);
+std.age=21;
+
+pointer สามารถเข้าถึง ฟิลด์ผ่าน . ได้แล้ว ยังสามารถใช้ -> ได้อีกด้วย
+typedef เป็นการประกาศประเภทข้อมูล เช่น
+typedef int myType; //myType ก็จะเป็น int
+
+self-referential structures
+ออกแบบเพื่อมาจัดการ linked list โดยสร้างมาเพื่อให้ struct อ้างกลับไปยังโครงสร้างตนเอง
+ex. 
+struct node {
+    int data;
+    struct node *next;
+};
+มักใช้ 'node' ในการเก็บข้อมูล 1 หน่วย 
+    struct node เก็บข้อมูล 2 ส่วน
+    ใช้เก็บข้อมูล
+    ตัวแปร pointer ใช้อ้างอิงไปยังโหนดถัดไป
