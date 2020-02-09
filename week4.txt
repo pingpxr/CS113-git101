@@ -1,0 +1,47 @@
+function header และ function body
+เป็นคอมไพเลอร์แบบ one pass
+function header ประกอบด้วย
+1.ชนิดข้อมูลที่ส่งกลับ *ถ้าไม่มีข้อมูลส่งกลับ ใช้ void
+2.ชื่อฟังก์ชัน
+function body ประกอบด้วย
+1.การประกาศตัวแปรเฉพาะที่
+2.คำสั่งในการส่งค่า *ต้องเขียนไว้บรรทัดสุดท้าย โดยใช้ return
+รูปแบบ
+int isEven(int value)
+{
+    if(value % 2 == 0)
+        return 1;
+    else
+        return 0;
+}
+int คือ return-value-type
+isEven คือ function name
+int value คือ parameter-list
+
+pass by value คือการส่งค่าไปให้ function
+pass by reference คือการส่งค่าไปยังฟังก์ชัน โดยส่งเป็น address ของตัวแปร
+
+return values ฟังก์ชันจะส่งค่ากลับ หรืออาจจะ return เป็น void ได้
+โดยเมื่อ เจอคำสั่งreturn ในฟังก์ชัน ลำดับการทำงานจะกลับไปทำงานต่อจากจุดที่ฟังก์ชันถูกรียกใช้
+
+recursion หรือการเรียกซ้ำ
+เป็นฟังก์ชันที่สามารถเรียกใช้ตนเองได้
+**หากเรียกใช้ตัวเอง โปรแกรมจะมีการสำเนาค่าตัวแปรต่างๆ ขึ้นมาอีกชุด
+ex. 
+#include <stdio.h>
+long factorial(long n)
+{
+    if (n==0)
+        return 1;
+    else    
+        return n*factorial(n-1);
+}
+int main()
+{
+    long n;
+    n= 6;
+    printf("%ld = %ld\n", n,factorial(n));
+}
+
+local variables คือ ตัวแปรที่ประกาศอยู่ใน block ใช้ได้แค่ในฟังก์ชันที่ถูกประกาศ
+Global variables ประกาศอยู่ภายนอกฟังก์ชัน ฟังก์ชันอื่นสามารถใช้ได้
