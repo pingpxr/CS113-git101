@@ -1,0 +1,39 @@
+function ต่อ
+ขอบเขตและช่วงชีวิตของตัวแปร
+1.local variables
+ประกาศตัวแปรอยู่ใน block ใช้งานได้แค่ภายในฟังก์ชันนั้น
+2.Global variables
+ประกาศไว้นอกฟังก์ชัน ทำให้เข้าถึงได้ทุกฟังก์ชัน รวมถึง main() ด้วย
+
+storage class มี 4 ลักษณะ คือ auto,register,extern,static ใช้กำหนดช่วงชีวิตในการเก็บข้อมูล
+auto,register เป็น automatic strage duration เมื่อเข้ามาใน block จะถูกประกาศขึ้น แต่พอออก ตัวแปรจะหายไปจาก memory
+extern,static เป็น static storage duration จะอยู่ใน memory จนกว่าจะสิ้นสุดการทำงาน
+
+การใช้ make ใช้ในการบรรจุกฏต่างๆเช่น
+target: dependency
+-->tab--> เป็นคำสั่งใช้ในการสร้าง target
+
+random number generator
+จะใช้คำว่า rand() เป็นการสุ่มเลขที่เป็นจำนวนเต็มระหว่าง 0 ถึง RAND_MAX
+RAND_MAX กำหนดไว้ใน <stdlib.h> อยู่แล้ว
+ex.
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+    int 1;
+    srand(10);
+    for(i=0 i<10 ;i++)
+    printf("%d\n",rand()%6+1);
+}
+2
+5
+3
+6
+1
+6
+6
+2
+6
+6
