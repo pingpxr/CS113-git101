@@ -1,0 +1,47 @@
+pointer ใช้ในการเก็บค่าตำแหน่ง (address) ในหน่วยความจำ
+address ในหน่วยความจำเป็นจำนวน้ต็มบวกโดยเริ่มที่ 0
+
+pointer operators
+    1.& หรือ address operator ใช้ในการหาค่าตำแหน่งในหน่วยความจำอง operand
+    ex. p=&c;
+    2.* หรือ dereferencing operator ใช้ในการเข้าถึงข้อมูลที่อ้างอิง
+
+scanf() มีลักษณะคล้ายๆ printf() แต่ scanf() จะต้องมี &นำหน้าตัวแปรที่เราต้องการใส่ค่า
+ex. int input;
+    scanf("%d", &input);
+
+pointers และ Arrays
+ex. int a[10];
+ข้อมูลตัวแรกจะเป็น a[0] ดังนั้น a และ &a[0] จะมีค่าเท่ากัน
+และ *(a+i) และ a[i]  จะเป็นนิพจน์เดียวกัน
+ex. 
+int main()
+{
+    int number[5] = {10, 20, 30, 40, 50,};
+    int *myPonter = &number;
+    printf("first -> %d\n", *mypointer);
+    mypointer++;
+    printf("go next -> %d\n", *mypointer);
+    mypointer +=3;
+    printf("go next 3 -> %d\n", *mypointer);
+    mypointer --;
+    printf("go back -> %d\n", *mypointer);
+    return 0;
+}
+ จะได้ first -> 10 //เรื่มที่ตัวแรก
+      go next -> 20 //จาก number[0] + 1 -> number[1]
+      go next 3 -> 50 // + ไปอีก 3 
+      go back -> 40 // - ไป 1 
+
+ตัวแปร pointer สามารถเป็น operand ให้กับนิพจน์ได้คือ
+1.นิพจน์ทางคณิตศาสตร์
+2.นิพจน์ในการกำหนดค่า
+3.นิพจน์ในการเปรียบเทียบ
+4.แต่ บางตัวก็ไม่สามารถทำกับ pointer ได้
+
+การใช้ malloc()
+int *data;
+data =(int *)malloc(1000 * sizeof(int));
+malloc() เป็นจำนวนของ byte ในการจองพื้นที่ และจะส่งกลับเป็น void *
+การใช้ free()
+จะเป็นตำแหน่งของหน่วยความจำ ที่เราต้องคืนพื้นที่ให้ระบบ
